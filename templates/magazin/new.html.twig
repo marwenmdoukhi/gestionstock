@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Magazin{% endblock %}
+
+{% block body %}
+    <h1>Create new Magazin</h1>
+
+    {{ include('magazin/_form.html.twig') }}
+
+    <a href="{{ path('magazin_index') }}">back to list</a>
+{% endblock %}

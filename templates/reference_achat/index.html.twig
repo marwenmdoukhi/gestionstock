@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ReferenceAchat index{% endblock %}
+
+{% block body %}
+    <h1>ReferenceAchat index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>DateRefrence</th>
+                <th>Reference</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reference_achat in reference_achats %}
+            <tr>
+                <td>{{ reference_achat.id }}</td>
+                <td>{{ reference_achat.dateRefrence ? reference_achat.dateRefrence|date('Y-m-d') : '' }}</td>
+                <td>{{ reference_achat.reference }}</td>
+                <td>
+                    <a href="{{ path('achat_new', {'id': reference_achat.id}) }}">Ajouter</a>
+
+                    <a href="{{ path('reference_achat_show', {'id': reference_achat.id}) }}">show</a>
+                    <a href="{{ path('reference_achat_edit', {'id': reference_achat.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('reference_achat_new') }}">Create new</a>
+{% endblock %}

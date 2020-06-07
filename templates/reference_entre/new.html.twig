@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ReferenceEntre{% endblock %}
+
+{% block body %}
+    <h1>Create new ReferenceEntre</h1>
+
+    {{ include('reference_entre/_form.html.twig') }}
+
+    <a href="{{ path('reference_entre_index') }}">back to list</a>
+{% endblock %}

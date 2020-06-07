@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ReferenceAchat{% endblock %}
+
+{% block body %}
+    <h1>Create new ReferenceAchat</h1>
+
+    {{ include('reference_achat/_form.html.twig') }}
+
+    <a href="{{ path('reference_achat_index') }}">back to list</a>
+{% endblock %}

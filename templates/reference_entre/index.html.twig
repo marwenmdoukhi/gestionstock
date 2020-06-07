@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ReferenceEntre index{% endblock %}
+
+{% block body %}
+    <h1>ReferenceEntre index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Reference</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reference_entre in reference_entres %}
+            <tr>
+                <td>{{ reference_entre.id }}</td>
+                <td>{{ reference_entre.reference }}</td>
+                <td>
+                    <a href="{{ path('vente_new', {'id': reference_entre.id}) }}">Ajouter</a>
+
+                    <a href="{{ path('reference_entre_show', {'id': reference_entre.id}) }}">show</a>
+                    <a href="{{ path('reference_entre_edit', {'id': reference_entre.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('reference_entre_new') }}">Create new</a>
+{% endblock %}

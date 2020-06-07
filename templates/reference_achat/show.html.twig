@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ReferenceAchat{% endblock %}
+
+{% block body %}
+    <h1>ReferenceAchat</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ reference_achat.id }}</td>
+            </tr>
+            <tr>
+                <th>DateRefrence</th>
+                <td>{{ reference_achat.dateRefrence ? reference_achat.dateRefrence|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Reference</th>
+                <td>{{ reference_achat.reference }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('reference_achat_index') }}">back to list</a>
+
+    <a href="{{ path('reference_achat_edit', {'id': reference_achat.id}) }}">edit</a>
+
+    {{ include('reference_achat/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Magazin{% endblock %}
+
+{% block body %}
+    <h1>Edit Magazin</h1>
+
+    {{ include('magazin/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('magazin_index') }}">back to list</a>
+
+    {{ include('magazin/_delete_form.html.twig') }}
+{% endblock %}
